@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools, mathrsfs, amsmath, amsthm,amssymb}
+\usepackage[table]{xcolor}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\newenvironment{exercise}[1]
+% Figure out how to add an argument for custom numbering so you don't
+% have to create a bunch of empty problems
+{\noindent \setcounter{subsection}{#1-1} \subsection{}}
+{}
+
+\title{Mathematical Statistics and Data Analysis Solutions Manual}
+\author{Thomas Hughes}
+\date{July 2021}
+
+\usepackage[pdfencoding=auto, psdextra]{hyperref}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\input{Chapter1.tex}
+
+\newpage
+\input{Chapter2.tex}
+
+% \newpage
+% \input{Chapter3.tex}
+
+% \newpage
+% \input{Chapter4.tex}
+
+% \newpage
+% \input{Chapter5.tex}
+
+% \newpage
+% \input{Chapter6.tex}
+
+% \newpage
+% \input{Chapter7.tex}
+
+% \newpage
+% \input{Chapter8.tex}
+
+% \newpage
+% \input{Chapter9.tex}
+
+\end{document}

@@ -1,0 +1,80 @@
+\section{Probability}
+
+\begin{exercise}{5} \label{1.5}
+    Let \( A \) and \( B \) be arbitrary events. Let \( C \) be the event that either \( A \) occurs or \( B \) occurs, but not both. Express \( C \) in terms of \( A \) and \( B \) using any of the basic operations of union, intersection, and complement.
+    
+    \begin{proof}
+        \[ C = \left( A \cap B^c \right) \cup \left( A^c \cap B \right) \]
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}{7} \label{1.7}
+    Prove Bonferroni's inequality:
+    \[ P(A) + P(B) - 1 \leq P(A \cap B) \]
+    
+    \begin{proof}
+        \[ P(A) + P(B) - P(A \cap B) = P(A \cup B) \leq 1 \]
+        which implies the result.
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}{8} \label{1.8}
+    Prove that
+    \[ P \left( \bigcup_{i=1}^n A_i\right) \leq \sum_{i=1}^n P(A_i) \]
+    
+    \begin{proof}
+        Define \( A_0 = \emptyset \) and 
+        \[ C_i = A_i \cap \left( \bigcup_{j=0}^{i-1} A_j \right)^c \hspace{3mm} i \in \mathbb{N} \]
+        Then \( \bigcup_{i=1}^n A_i = \bigcup_{i=1}^n C_i \). Since \( C_i \subseteq A_i \) and \( C_i \cap C_j = \emptyset \) when \( i \neq j \), it follows by the axioms 2 and 3 of probability measures that \( P(C_i) \leq P(A_i) \) and that
+        \[ P \left( \bigcup_{i=1}^n A_i\right) = P\left( \bigcup_{i=1}^n C_i \right) = \sum_{i=1}^n P(C_i) \leq \sum_{i=1}^n P(A_i)\]
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}{9} \label{1.9}
+    The weather forecast says that the probability of rain on Saturday is \( 25\% \) and the probability of rain on Sunday is \( 25\% \). Is the probability of rain during the weekend \( 50\%\)? Why or why not?
+    
+    \begin{proof}[Solution]
+        Define \( A \) to be the event that it rains on Saturday and \( B \) to be the event that it rains on Sunday. Then \( A \cup B \) is the event that it rains on the weekend which is given by 
+        \begin{align*} 
+            P(A \cup B) &= P(A) + P(B) - P(A \cap B) \\
+            &= 0.5 - P(A \cap B)
+        \end{align*}
+        Thus \( P(A \cup B) \leq 0.5 \) with equality iff \( P(A \cap B) = 0 \). Note that if \( A \) and \( B \) are independent then we have \( P(A \cup B) < 0.5 \).
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}{17} \label{1.17}
+    In acceptance sampling, a purchaser samples 4 items from a lot of 100 and rejects the lot if one or more are defective. Graph the probability that the lot is accepted as a function of the percent of defective items in the lot.
+    
+    \begin{proof}[Solution] Let \( X \) be the percentage defective, then
+    \[ P(\text{Acceptance }\vert \text{ } X = x) = \left( 1-\frac{x}{100} \right)^4 \]
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[->] (-0.1,0) -- (5.5,0) node[right] {$x$};
+                
+                \draw[->] (0,-0.1) -- (0,5.5) node[above] {$y$};
+                
+                \draw (0,0.5) node[left] {$1$};
+                \draw (5,0) node[below] {$100$};
+                
+                \draw[scale=0.5, smooth, red, thick] plot[samples=200,domain=0:10] function {(1-(x/10))**4};
+            \end{tikzpicture}
+        \end{center}
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}{18} \label{1.18}
+    A lot of \( n \) items contains a \( k \) defectives, and \( m \) are selected randomly and inspected. How should the value of \( m \) be chosen so that the probability that at least one defective item turns up is \( 0.90 \)? Apply your answer to
+    \begin{enumerate}
+        \item \( n = 1000 \) and \( k = 10 \)
+        \item \( n = 10000 \) and \( k = 100 \)
+    \end{enumerate}
+    
+    \begin{proof}[Solution] Solution pending.
+        \begin{enumerate}
+            \item pending
+            
+            \item pending
+        \end{enumerate}
+    \end{proof}
+\end{exercise}
